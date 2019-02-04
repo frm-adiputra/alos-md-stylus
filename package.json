@@ -4,8 +4,7 @@
   "description": "For testing alos-uic styles",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production pug -o dist src/index.pug",
-    "build:css": "cd src/styles && cross-env NODE_ENV=production stylus -c < index.styl > ../../dist/index.css",
+    "build": "cd src && cross-env NODE_ENV=production stylus -c < index.styl > ../dist/index.css",
     "serve": "nodemon -e js,pug,styl test/server.js"
   },
   "author": "",
