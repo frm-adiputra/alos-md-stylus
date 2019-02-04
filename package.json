@@ -1,0 +1,23 @@
+{
+  "name": "alos-md-stylus",
+  "version": "1.0.0",
+  "description": "For testing alos-uic styles",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production pug -o dist src/index.pug",
+    "build:css": "cd src/styles && cross-env NODE_ENV=production stylus -c < index.styl > ../../dist/index.css",
+    "serve": "nodemon -e js,pug,styl test/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "minimist": "^1.2.0",
+    "nib": "^1.1.2",
+    "nodemon": "^1.18.9",
+    "pug": "^2.0.3",
+    "stylus": "^0.54.5"
+  }
+}
