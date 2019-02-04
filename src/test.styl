@@ -9,7 +9,29 @@
     height 100vh
 
     .typography-overlay__h1
-        height 120px
-        background-color rgba(255, 0, 0, 0.3)
-        // box-sizing border-box
-        // border-bottom 1px solid red
+        height unit($h1-line-height, 'px')
+        // background-color rgba(255, 0, 0, 0.3)
+
+    .typography-overlay__h2
+        height unit($h2-line-height, 'px')
+        // background-color rgba(0, 255, 0, 0.3)
+
+    .typography-overlay__h3
+        height unit($h3-line-height, 'px')
+        // background-color rgba(0, 0, 255, 0.3)
+
+    .typography-overlay__h4
+        height unit($h4-line-height, 'px')
+        // background-color rgba(255, 0, 0, 0.3)
+
+    .typography-overlay__h5
+        height unit($h5-line-height, 'px')
+        // background-color rgba(0, 255, 0, 0.3)
+
+    .typography-overlay__h6
+        height unit($h6-line-height, 'px')
+        // background-color rgba(0, 0, 255, 0.3)
+
+.typography-overlay > *
+    box-sizing border-box
+    border-bottom 1px solid red

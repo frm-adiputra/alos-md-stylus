@@ -14,19 +14,37 @@ html(lang="en")
 		script.
 			FontMetrics.settings.chars.capHeight = 'M'
 			const fonts = [
-				{ name: 'H1', config: { fontWeight: 300, fontSize: 96 }}
+				{ name: 'H1', config: { fontWeight:'light', fontSize: 96 }},
+				{ name: 'H2', config: { fontWeight:'light', fontSize: 60 }},
+				{ name: 'H3', config: { fontWeight:'regular', fontSize: 48 }},
+				{ name: 'H4', config: { fontWeight:'regular', fontSize: 34 }},
+				{ name: 'H5', config: { fontWeight:'regular', fontSize: 24 }},
+				{ name: 'H6', config: { fontWeight:'medium', fontSize: 20 }},
 			]
+
+			const weight = (x) => {
+				if (x == 'light') { return 300 }
+				else if (x == 'regular') { return 400 }
+				else if (x == 'medium') { return 500 }
+				else {
+					throw new Error(`invalid weight: ${x}`)
+				}
+			}
+
+			const lineHeight = (x) => {
+				return Math.ceil((x * 1.4) / 4) * 4
+			}
 
 			fonts.forEach(f => {
 				const { fontWeight, fontSize } = f.config
 				const m = FontMetrics({
 					fontFamily: 'Roboto',
 					origin: 'baseline',
-					fontWeight,
+					fontWeight: weight(fontWeight),
 					fontSize
 					// Optional (defaults)
 				})
 
-				console.log(`${f.name} - metrics:`, m)
-				console.log(`${f.name} - capHeight:`, `${m.capHeight * m.fontSize}px`)
+				//- console.log(`${f.name} - metrics:`, m)
+				console.log(`${f.name} {capHeight: ${Math.round(Math.abs(m.capHeight) * 100000) / 100000}}, lineHeight: ${lineHeight(fontSize)}`)
 			})
