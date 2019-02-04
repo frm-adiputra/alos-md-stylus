@@ -21,7 +21,9 @@ app.use(stylus.middleware({
 
 app.get('/', function (req, res) { res.render('index') })
 app.get('/typography.html', function (req, res) { res.render('typography') })
+app.get('/font-metrics.html', function (req, res) { res.render('font-metrics') })
 
 app.use(express.static('dist'))
+app.use(express.static(__dirname + '/static'))
 
 app.listen(port, () => console.log(`Listening on port http://localhost:${port}`))

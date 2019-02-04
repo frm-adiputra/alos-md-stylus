@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width,initial-scale=1.0")
+		title FontMetrics
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons")
+		//- https://github.com/soulwire/FontMetrics
+		script(src="/FontMetrics.min.js")
+	body
+		p See console
+		script.
+			FontMetrics.settings.chars.capHeight = 'M'
+			const fonts = [
+				{ name: 'H1', config: { fontWeight: 300, fontSize: 96 }}
+			]
+
+			fonts.forEach(f => {
+				const { fontWeight, fontSize } = f.config
+				const m = FontMetrics({
+					fontFamily: 'Roboto',
+					origin: 'top', // zero origin
+					fontWeight,
+					fontSize
+					// Optional (defaults)
+				})
+
+				console.log(`${f.name} - metrics:`, m)
+				console.log(`${f.name} - capHeight:`, `${m.capHeight * m.fontSize}px`)
+			})
