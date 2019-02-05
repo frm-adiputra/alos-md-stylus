@@ -6,7 +6,8 @@ shiftForRhythm(offset)
 // params:
 // 	o - typography class
 //	lineHeight - must be in px
-rhythm(o, lineHeight)
+rhythm(o, lineHeight, spaceBefore = 0)
+	padding-top: spaceBefore unless spaceBefore == 0
 	line-height: fnToUnitlessLineHeight(lineHeight, o.fontSize)
 	shiftForRhythm(fnFontShift(lineHeight, o.capHeight, o.fontSize))
 
