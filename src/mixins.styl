@@ -1,3 +1,23 @@
-rhythm(offset)
-	margin-top unit(offset, 'px')
-	margin-bottom unit(-1 * offset, 'px')
+shiftForRhythm(offset)
+	margin-top: unit(offset, 'px')
+	margin-bottom: unit(-1 * offset, 'px')
+
+// Apply vertical rhythm
+// params:
+// 	o - typography class
+//	lineHeight - must be in px
+rhythm(o, lineHeight)
+	line-height: fnToUnitlessLineHeight(lineHeight, o.fontSize)
+	shiftForRhythm(fnFontShift(lineHeight, o.capHeight, o.fontSize))
+
+// Apply typography class
+// params:
+// 	o - typography class
+typography(o)
+	font-family: o.fontFamily
+	font-weight: o.fontWeight
+	font-size: fnRemFontSize(o.fontSize)
+	text-transform: o.textTransform
+	letter-spacing: fnLetterSpacing(o.letterSpacing, o.fontSize)
+	// line-height: unit(o.lineHeight, 'px')
+	// rhythm(fnFontShift(o.lineHeight, o.capHeight, o.fontSize))

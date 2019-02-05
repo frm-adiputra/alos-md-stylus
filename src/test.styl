@@ -1,37 +1,31 @@
-@import 'index'
+@require 'index'
 
 .test-button-text
-    @extend $button-typography
+	@extend $button-typography
 
 .typography-overlay
-    fixed top left
-    width 100vw
-    height 100vh
+	fixed top left
+	width 100vw
+	height 100vh
 
-    .typography-overlay__h1
-        height unit($h1-line-height, 'px')
-        // background-color rgba(255, 0, 0, 0.3)
+	.typography-overlay__h1
+		height: fnAdjustLineHeight($h1.fontSize, 1.125) * $h1.fontSize
 
-    .typography-overlay__h2
-        height unit($h2-line-height, 'px')
-        // background-color rgba(0, 255, 0, 0.3)
+	.typography-overlay__h2
+		height: fnAdjustLineHeight($h2.fontSize, 1.125) * $h2.fontSize
 
-    .typography-overlay__h3
-        height unit($h3-line-height, 'px')
-        // background-color rgba(0, 0, 255, 0.3)
+	.typography-overlay__h3
+		height: fnAdjustLineHeight($h3.fontSize, 1.125) * $h3.fontSize
 
-    .typography-overlay__h4
-        height unit($h4-line-height, 'px')
-        // background-color rgba(255, 0, 0, 0.3)
+	.typography-overlay__h4
+		height: fnAdjustLineHeight($h4.fontSize, 1.125) * $h4.fontSize
 
-    .typography-overlay__h5
-        height unit($h5-line-height, 'px')
-        // background-color rgba(0, 255, 0, 0.3)
+	.typography-overlay__h5
+		height: fnAdjustLineHeight($h5.fontSize, 1.125) * $h5.fontSize
 
-    .typography-overlay__h6
-        height unit($h6-line-height, 'px')
-        // background-color rgba(0, 0, 255, 0.3)
+	.typography-overlay__h6
+		height: fnAdjustLineHeight($h6.fontSize, 1.125) * $h6.fontSize
 
 .typography-overlay > *
-    box-sizing border-box
-    border-bottom 1px solid red
+	box-sizing border-box
+	border-bottom 1px solid red

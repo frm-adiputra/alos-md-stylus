@@ -1,102 +1,51 @@
 .h1
-    font-family $h1-font-family
-    font-weight $h1-font-weight
-    font-size fnRemFontSize($h1-font-size)
-    text-transform $h1-text-transform
-    letter-spacing fnLetterSpacing($h1-letter-spacing, $h1-font-size)
-    line-height unit($h1-line-height, 'px')
-    rhythm(fnFontShift($h1-line-height, $h1-cap-height, $h1-font-size))
+    typography($h1)
+    rhythm($h1, fnAdjustLineHeight($h1.fontSize, 1.125) * $h1.fontSize)
 
 .h2
-    font-family $h2-font-family
-    font-weight $h2-font-weight
-    font-size fnRemFontSize($h2-font-size)
-    text-transform $h2-text-transform
-    letter-spacing fnLetterSpacing($h2-letter-spacing, $h2-font-size)
-    line-height unit($h2-line-height, 'px')
-    rhythm(fnFontShift($h2-line-height, $h2-cap-height, $h2-font-size))
+    typography($h2)
+    rhythm($h2, fnAdjustLineHeight($h2.fontSize, 1.125) * $h2.fontSize)
 
 .h3
-    font-family $h3-font-family
-    font-weight $h3-font-weight
-    font-size fnRemFontSize($h3-font-size)
-    text-transform $h3-text-transform
-    letter-spacing fnLetterSpacing($h3-letter-spacing, $h3-font-size)
-    line-height unit($h3-line-height, 'px')
-    rhythm(fnFontShift($h3-line-height, $h3-cap-height, $h3-font-size))
+    typography($h3)
+    rhythm($h3, fnAdjustLineHeight($h3.fontSize, 1.125) * $h3.fontSize)
 
 .h4
-    font-family $h4-font-family
-    font-weight $h4-font-weight
-    font-size fnRemFontSize($h4-font-size)
-    text-transform $h4-text-transform
-    letter-spacing fnLetterSpacing($h4-letter-spacing, $h4-font-size)
-    line-height unit($h4-line-height, 'px')
-    rhythm(fnFontShift($h4-line-height, $h4-cap-height, $h4-font-size))
+    typography($h4)
+    rhythm($h4, fnAdjustLineHeight($h4.fontSize, 1.125) * $h4.fontSize)
 
 .h5
-    font-family $h5-font-family
-    font-weight $h5-font-weight
-    font-size fnRemFontSize($h5-font-size)
-    text-transform $h5-text-transform
-    letter-spacing fnLetterSpacing($h5-letter-spacing, $h5-font-size)
-    line-height unit($h5-line-height, 'px')
-    rhythm(fnFontShift($h5-line-height, $h5-cap-height, $h5-font-size))
+    typography($h5)
+    rhythm($h5, fnAdjustLineHeight($h5.fontSize, 1.125) * $h5.fontSize)
 
 .h6
-    font-family $h6-font-family
-    font-weight $h6-font-weight
-    font-size fnRemFontSize($h6-font-size)
-    text-transform $h6-text-transform
-    letter-spacing fnLetterSpacing($h6-letter-spacing, $h6-font-size)
-    line-height unit($h6-line-height, 'px')
-    rhythm(fnFontShift($h6-line-height, $h6-cap-height, $h6-font-size))
+    typography($h6)
+    rhythm($h6, fnAdjustLineHeight($h6.fontSize, 1.125) * $h6.fontSize)
 
 .subtitle1
-    font-family $subtitle1-font-family
-    font-weight $subtitle1-font-weight
-    font-size fnRemFontSize($subtitle1-font-size)
-    text-transform $subtitle1-text-transform
-    letter-spacing fnLetterSpacing($subtitle1-letter-spacing, $subtitle1-font-size)
+    typography($subtitle1)
+    rhythm($subtitle1, fnAdjustLineHeight($subtitle1.fontSize, 1.125) * $subtitle1.fontSize)
 
 .subtitle2
-    font-family $subtitle2-font-family
-    font-weight $subtitle2-font-weight
-    font-size fnRemFontSize($subtitle2-font-size)
-    text-transform $subtitle2-text-transform
-    letter-spacing fnLetterSpacing($subtitle2-letter-spacing, $subtitle2-font-size)
+    typography($subtitle2)
+    rhythm($subtitle2, fnAdjustLineHeight($subtitle2.fontSize, 1.125) * $subtitle2.fontSize)
 
 .body1
-    font-family $body1-font-family
-    font-weight $body1-font-weight
-    font-size fnRemFontSize($body1-font-size)
-    text-transform $body1-text-transform
-    letter-spacing fnLetterSpacing($body1-letter-spacing, $body1-font-size)
+    typography($body1)
+    rhythm($body1, fnAdjustLineHeight($body1.fontSize, 1.4) * $body1.fontSize)
 
 .body2
-    font-family $body2-font-family
-    font-weight $body2-font-weight
-    font-size fnRemFontSize($body2-font-size)
-    text-transform $body2-text-transform
-    letter-spacing fnLetterSpacing($body2-letter-spacing, $body2-font-size)
+    typography($body2)
+    rhythm($body2, fnAdjustLineHeight($body2.fontSize, 1.4) * $body2.fontSize)
 
 $button-typography
-    font-family $button-font-family
-    font-weight $button-font-weight
-    font-size fnRemFontSize($button-font-size)
-    text-transform $button-text-transform
-    letter-spacing fnLetterSpacing($button-letter-spacing, $button-font-size)
+    typography($button)
+    rhythm($button, fnAdjustLineHeight($button.fontSize, 1.125) * $button.fontSize)
 
 .caption
-    font-family $caption-font-family
-    font-weight $caption-font-weight
-    font-size fnRemFontSize($caption-font-size)
-    text-transform $caption-text-transform
-    letter-spacing fnLetterSpacing($caption-letter-spacing, $caption-font-size)
+    typography($caption)
+    rhythm($caption, fnAdjustLineHeight($caption.fontSize, 1.125) * $caption.fontSize)
 
 .overline
-    font-family $overline-font-family
-    font-weight $overline-font-weight
-    font-size fnRemFontSize($overline-font-size)
-    text-transform $overline-text-transform
-    letter-spacing fnLetterSpacing($overline-letter-spacing, $overline-font-size)
+    typography($overline)
+    rhythm($overline, fnAdjustLineHeight($overline.fontSize, 1.125) * $overline.fontSize)

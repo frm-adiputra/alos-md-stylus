@@ -1,8 +1,34 @@
 fnLetterSpacing(tracking, fontSize)
-    unit(tracking/fontSize, 'rem')
+	unit(tracking/fontSize, 'rem')
 
 fnRemFontSize(fontSize)
-    $font-ratio * fontSize
+	$font-ratio * fontSize
 
+// Calculate offset to snap text to baseline
 fnFontShift(lineHeight, capHeight, fontSize)
-    (lineHeight - (capHeight * fontSize)) / 2
+	unless unit(lineHeight) == 'px'
+		error('lineHeight must be in px')
+	unless unit(fontSize) == 'px'
+		error('fontSize must be in px')
+	unless unit(capHeight) == ''
+		error('lineHeight must be unitless')
+	(lineHeight - (capHeight * fontSize)) / 2
+
+fnToUnitlessLineHeight(lineHeight, fontSize)
+	unless unit(lineHeight) == 'px'
+		error('lineHeight must be in px')
+	unless unit(fontSize) == 'px'
+		error('fontSize must be in px')
+	unit(lineHeight / fontSize, '')
+
+// Adjust line height to 4dp grid.
+// params:
+//	fontSize (must be px)
+//	lineHeight (must be unitless)
+// returns: unitless lineHeight
+fnAdjustLineHeight(fontSize, lineHeight)
+	unless unit(fontSize) == 'px'
+		error('fontSize must be in px')
+	unless unit(lineHeight) == ''
+		error('lineHeight must be unitless')
+	(ceil((unit(fontSize, '') * lineHeight) / 4) * 4) / unit(fontSize, '')
