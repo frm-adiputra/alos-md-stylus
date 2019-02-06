@@ -1,4 +1,14 @@
-@require 'index'
+@require './reset'
+@require './variables'
+@require './functions'
+@require './mixins'
+
+$base-font-size = 14px
+
+@require './typography'
+
+html, body
+	font-size: 14px
 
 .test-button-text
 	@extend $button-typography

@@ -2,7 +2,9 @@ fnLetterSpacing(tracking, fontSize)
 	unit(tracking/fontSize, 'rem')
 
 fnRemFontSize(fontSize)
-	$font-ratio * fontSize
+	unless unit(fontSize) == 'px'
+		error('fontSize must be in px')
+	unit((1 / unit($base-font-size, '')) * fontSize, 'rem')
 
 // Calculate offset to snap text to baseline
 fnFontShift(lineHeight, capHeight, fontSize)
