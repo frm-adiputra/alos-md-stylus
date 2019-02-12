@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "font-metrics": "node test/fontMetrics.js",
-    "build": "cd src && cross-env NODE_ENV=production stylus -c < index.styl > ../dist/index.css",
+    "build": "npm run build:index && npm run build:forVuetify",
+    "build:index": "cd src && cross-env NODE_ENV=production stylus --use nib/lib/nib -c < index.styl > ../dist/index.css",
+    "build:forVuetify": "cd src && cross-env NODE_ENV=production stylus --use nib/lib/nib -c < forVuetify.styl > ../dist/forVuetify.css",
     "serve": "nodemon -e js,pug,styl test/server.js"
   },
   "author": "",
